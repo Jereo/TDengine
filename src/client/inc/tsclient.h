@@ -403,6 +403,7 @@ void tscCloseTscObj(STscObj *pObj);
 TAOS *taos_connect_a(char *ip, char *user, char *pass, char *db, uint16_t port, void (*fp)(void *, TAOS_RES *, int),
                      void *param, void **taos);
 
+int doAsyncParseSql(SSqlObj* pSql, const char* sqlstr, size_t sqlLen);
 void doAsyncQuery(STscObj *pObj, SSqlObj *pSql, void (*fp)(), void *param, const char *sqlstr, size_t sqlLen);
 
 void tscProcessMultiVnodesInsertFromFile(SSqlObj *pSql);
